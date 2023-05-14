@@ -1,0 +1,93 @@
+header{
+    background: url('pictures/shapka2.jpg') bottom center no-repeat;
+    height: auto;
+    background-color: rgb(0, 0, 0);
+    background-size: auto;
+    max-width: 1000px;
+    width: 100%;
+    height: auto;
+    color: rgb(255, 255, 255);
+    align-self: center;
+    text-align: center;
+    margin-top: 0;
+}
+main{
+    font-family: 'Franklin Gothic Medium';
+    background-color: rgb(85, 0, 255);
+    height: auto;
+    size: auto;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: auto;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+}
+footer{
+    height: auto;
+    max-width: 1000px;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding-bottom: 20px;
+    margin-top: 0px;
+    align-self: center;
+}
+.wrapper {
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+.header-Topic {
+    font-family: 'Franklin Gothic Medium';
+    padding: 30px 20px 0px 20px;
+    text-align: center;
+}
+.link-active{
+    font-family: 'Noto Sans';
+    text-align: center;
+    color: rgb(0, 0, 0);
+    text-decoration: underline;
+}
+.content{
+    display:flex;
+    flex-direction: row;
+    padding: 20px;
+    flex-wrap: wrap;
+    align-self: center;
+    margin: auto;
+}
+.main-text{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    box-sizing: border-box;
+    align-self: center;
+}
+.adress-contacts {
+    text-align: center;
+}
+.footer-contacts {
+    display: block;
+    color: rgb(150, 150, 150);
+}
+.picture {
+    border: 1px solid rgb(0, 0, 0);
+    width: 230px;
+    height: 150px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    float: left;
+}
+.p-contacts{
+    font-weight: bold;
+}
+
+#hz {
+  
+}
+#fps {
+
+}

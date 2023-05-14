@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>ТЕСТ</title>
+        <link rel="icon" href="pictures/favicon.ico" type ="image/x-icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style1.css">
+        <link rel="stylesheet" type="text/css" href="style-table.css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <header>
+                <h1 class="header-Topic">Проверка, насколько быстро твой компьютер может подмигивать</h1>
+            </header>
+            <main>
+                <article class="content">
+                  <section class="main-text"></section>
+                    <table class="table">
+                      <thead>
+                          <tr>
+                              <th>FPS</th> <th>Герцовка</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                            <td><p id="fps"></p></td> <td><p id="hz"></p></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <p>Данный сайт предназначен для тестирования количества кадров в секунду (в таблице FPS) и вычислению частоты обновлений данных монитора (в таблице Герцовка).</p>
+                    <p>Расшифровка FPS — frames per second, то есть кадры в секунду. Этот показатель можно сравнить с герцовкой монитора, то есть с частотой его обновления. Однако, в отличие от герцовки, зависящей от характеристик монитора, показатель зависит от мощности компьютера.</p>
+                    <p>Частота обновления данных — характеристика, определяющая плавность как динамического изображения, так и плавность интерфейса, который отражается на экране устройства. Она измеряется в герцах (Гц) и определяет, сколько раз за одну секунду дисплей способен обновить картинку.</p>
+                  </section>
+                </article>
+            </main>
+            <footer>
+                <adress class="adress-contacts">
+                    <p class="p-contacts">Сайт находится на стадии проектирования</p>
+                    <a class="footer-contacts" href="mailto:dimand4803@gmail.com">dimand4803@gmail.com</a>
+                </adress>
+            </footer>
+            <script>
+            let lastTime = 0;
+            //Для подсчёта частоты обновления экрана.
+            function update(timestamp) {
+              const deltaTime = timestamp - lastTime;
+              const num = 1000 / deltaTime;
+              const hz = num.toPrecision(4);
+              document.getElementById("hz").textContent = `${hz} Гц`;
+              lastTime = timestamp;
+              requestAnimationFrame(update);
+            }
+            requestAnimationFrame(update);
+            //Для подсчета FPS.
+            var fps = document.getElementById("fps");
+            var lastCalledTime;
+            var fpsCounter = function() {
+              if(!lastCalledTime) {
+                lastCalledTime = performance.now();
+                fps.innerHTML = "0 FPS";
+              }
+              var delta = (performance.now() - lastCalledTime) / 1000;
+              lastCalledTime = performance.now();
+              var fpsCount = 1 / delta;
+              fps.innerHTML = fpsCount.toPrecision(4) + " кадров/сек";
+              requestAnimationFrame(fpsCounter);
+            };
+            fpsCounter();
+          </script>
+        </div>
+    </body>
+</html>

@@ -73,21 +73,10 @@ footer{
     display: block;
     color: rgb(150, 150, 150);
 }
-.picture {
-    border: 1px solid rgb(0, 0, 0);
-    width: 230px;
-    height: 150px;
-    margin-right: 10px;
-    margin-bottom: 5px;
-    float: left;
-}
 .p-contacts{
     font-weight: bold;
 }
 
 #hz {
   
-}
-#fps {
-
 }

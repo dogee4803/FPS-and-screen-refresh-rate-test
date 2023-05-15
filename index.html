@@ -19,17 +19,16 @@
                     <table class="table">
                       <thead>
                           <tr>
-                              <th>FPS</th> <th>Герцовка</th>
+                              <th>Герцовка</th>
                           </tr>
                       </thead>
                       <tbody>
                         <tr>
-                            <td><p id="fps"></p></td> <td><p id="hz"></p></td>
+                            <td><p id="hz"></p></td>
                         </tr>
                       </tbody>
                     </table>
-                    <p>Данный сайт предназначен для тестирования количества кадров в секунду (в таблице FPS) и вычислению частоты обновлений данных монитора (в таблице Герцовка).</p>
-                    <p>Расшифровка FPS — frames per second, то есть кадры в секунду. Этот показатель можно сравнить с герцовкой монитора, то есть с частотой его обновления. Однако, в отличие от герцовки, зависящей от характеристик монитора, показатель зависит от мощности компьютера.</p>
+                    <p>Данный сайт предназначен для вычисления частоты обновлений данных монитора (в таблице Герцовка).</p>
                     <p>Частота обновления данных — характеристика, определяющая плавность как динамического изображения, так и плавность интерфейса, который отражается на экране устройства. Она измеряется в герцах (Гц) и определяет, сколько раз за одну секунду дисплей способен обновить картинку.</p>
                   </section>
                 </article>
@@ -52,21 +51,6 @@
               requestAnimationFrame(update);
             }
             requestAnimationFrame(update);
-            //Для подсчета FPS.
-            var fps = document.getElementById("fps");
-            var lastCalledTime;
-            var fpsCounter = function() {
-              if(!lastCalledTime) {
-                lastCalledTime = performance.now();
-                fps.innerHTML = "0 FPS";
-              }
-              var delta = (performance.now() - lastCalledTime) / 1000;
-              lastCalledTime = performance.now();
-              var fpsCount = 1 / delta;
-              fps.innerHTML = fpsCount.toPrecision(4) + " кадров/сек";
-              requestAnimationFrame(fpsCounter);
-            };
-            fpsCounter();
           </script>
         </div>
     </body>
